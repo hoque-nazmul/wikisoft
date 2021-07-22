@@ -38,3 +38,18 @@ function wikisoft_assets() {
     wp_enqueue_script('main', get_theme_file_uri('/assets/js/main.js'), ['jquery'], VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'wikisoft_assets');
+
+// WikiSoft Pagination
+function wikisoft_pagination () {
+    global $wp_query;
+    $links = paginate_links([
+        'total'   => isset( $wp_query->max_num_pages ) ? $wp_query->max_num_pages : 1,
+        'current' => get_query_var( 'paged' ) ? (int) get_query_var( 'paged' ) : 1,
+        'type' => 'list'
+    ]);
+    $links = str_replace('page-numbers', 'pgn__num', $links);
+    $links = str_replace("<ul class='pgn__num'>", "<ul>", $links);
+    $links = str_replace("prev pgn__num", "pgn__prev", $links);
+    $links = str_replace("next pgn__num", "pgn__next", $links);
+    return $links;
+}

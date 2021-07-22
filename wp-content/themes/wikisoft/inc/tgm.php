@@ -31,7 +31,7 @@
  * Plugin:
  * require_once dirname( __FILE__ ) . '/path/to/class-tgm-plugin-activation.php';
  */
-require_once get_template_directory() . '/path/to/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/lib/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'wikisoft_register_required_plugins' );
 
@@ -61,8 +61,8 @@ function wikisoft_register_required_plugins() {
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
-			'name'      => 'BuddyPress',
-			'slug'      => 'buddypress',
+			'name'      => 'Advanced Custom Field',
+			'slug'      => 'advanced-custom-fields',
 			'required'  => false,
 		),
 

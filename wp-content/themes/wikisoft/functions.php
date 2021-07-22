@@ -1,4 +1,5 @@
 <?php 
+require_once get_theme_file_path('/inc/tgm.php');
 
 function wikisoft_theme_setup () {
     load_theme_textdomain( 'wikisoft' );

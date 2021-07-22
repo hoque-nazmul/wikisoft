@@ -2,9 +2,9 @@
     
     <div class="entry__thumb">
         <div class="link-wrap">
-            <p>The Only Resource You Will Need To Start a Blog Using WordPress.</p>
+            <?php the_content(); ?>
             <cite>
-                <a target="_blank" href="https://colorlib.com/">https://colorlib.com</a>
+                <a target="_blank" href="http://softcope.com/">https://softcope.com</a>
             </cite>
         </div>
     </div>

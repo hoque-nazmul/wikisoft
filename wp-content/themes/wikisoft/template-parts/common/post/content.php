@@ -7,7 +7,7 @@
             </a>
         </div>
         <h1 class="entry__title">
-            <a href="single-gallery.html">
+            <a href="<?php the_permalink(); ?>">
                 <?php esc_html(the_title()); ?>
             </a>
         </h1>

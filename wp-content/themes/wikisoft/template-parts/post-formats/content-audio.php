@@ -1,3 +1,9 @@
+<?php
+    $audio_url = '';
+    if (function_exists('the_field')) {
+        $audio_url = get_field('file_source');
+    }
+?>
 <article class="masonry__brick entry format-audio" data-aos="fade-up">
 
     <div class="entry__thumb">

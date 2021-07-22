@@ -1,72 +1,107 @@
+<?php 
+    $wikisoft_fp = new WP_Query([
+        'meta_key' => 'featured',
+        'meta_value' => 1,
+        'posts_per_page' => 3
+    ]);
+
+    $featured_posts = [];
+
+    if ($wikisoft_fp->post_count > 1):
+    while($wikisoft_fp->have_posts()) {
+        $wikisoft_fp->the_post();
+        $categories = get_the_category();
+        $featured_posts[] = [
+            'post_thumbnails' => get_the_post_thumbnail_url(get_the_ID(), 'large'),
+            'title' => get_the_title(),
+            'author' => get_the_author_meta('display_name'),
+            'avater' => get_avatar_url(get_the_author_meta('ID')),
+            'date' => get_the_date(),
+            'category' => $categories[mt_rand(0, count($categories)-1)]->name
+        ];
+    }
+    
+?>
 <div class="pageheader-content row">
     <div class="col-full">
         <div class="featured">
             <div class="featured__column featured__column--big">
-                <div class="entry" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/thumbs/featured/featured-guitarman.jpg');">
+                <div class="entry" style="background-image:url('<?php echo esc_url($featured_posts[0]['post_thumbnails'], 'wikisoft'); ?>');">
                     
                     <div class="entry__content">
-                        <span class="entry__category"><a href="#0">Music</a></span>
+                        <span class="entry__category">
+                            <a href="#0">
+                                <?php echo esc_html($featured_posts[0]['category'], 'wikisoft'); ?>
+                            </a>
+                        </span>
 
-                        <h1><a href="#0" title="">What Your Music Preference Says About You and Your Personality.</a></h1>
+                        <h1>
+                            <a href="#0" title="">
+                                <?php echo esc_html($featured_posts[0]['title'], 'wikisoft'); ?>
+                            </a>
+                        </h1>
 
                         <div class="entry__info">
                             <a href="#0" class="entry__profile-pic">
-                                <img class="avatar" src="<?php echo get_template_directory_uri(); ?>/assets/images/avatars/user-03.jpg" alt="">
+                                <img class="avatar" src="<?php echo esc_url($featured_posts[0]['avater'], 'wikisoft'); ?>" alt="">
                             </a>
 
                             <ul class="entry__meta">
-                                <li><a href="#0">John Doe</a></li>
-                                <li>December 29, 2017</li>
+                                <li>
+                                    <a href="#0">
+                                        <?php echo esc_html($featured_posts[0]['author'], 'wikisoft'); ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <?php echo esc_html($featured_posts[0]['date'], 'wikisoft'); ?>
+                                </li>
                             </ul>
                         </div>
-                    </div> <!-- end entry__content -->
+                    </div>
                     
-                </div> <!-- end entry -->
-            </div> <!-- end featured__big -->
+                </div> 
+            </div> 
 
             <div class="featured__column featured__column--small">
-
-                <div class="entry" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/thumbs/featured/featured-watch.jpg');">
+                <?php 
+                    for($i = 1; $i < 3; $i++) : 
+                ?>
+                <div class="entry" style="background-image:url('<?php echo esc_url($featured_posts[$i]['post_thumbnails'], 'wikisoft'); ?>');">
                     
                     <div class="entry__content">
-                        <span class="entry__category"><a href="#0">Management</a></span>
+                        <span class="entry__category">
+                            <a href="#0">
+                                <?php echo esc_html($featured_posts[$i]['category'], 'wikisoft'); ?>
+                            </a>
+                        </span>
 
-                        <h1><a href="#0" title="">The Pomodoro Technique Really Works.</a></h1>
+                        <h1>
+                            <a href="#0" title="">
+                                <?php echo esc_html($featured_posts[$i]['title'], 'wikisoft'); ?>
+                            </a>
+                        </h1>
 
                         <div class="entry__info">
                             <a href="#0" class="entry__profile-pic">
-                                <img class="avatar" src="<?php echo get_template_directory_uri(); ?>/assets/images/avatars/user-03.jpg" alt="">
+                                <img class="avatar" src="<?php echo esc_url($featured_posts[$i]['avater'], 'wikisoft'); ?>" alt="">
                             </a>
 
                             <ul class="entry__meta">
-                                <li><a href="#0">John Doe</a></li>
-                                <li>December 27, 2017</li>
-                            </ul>
-                        </div>
-                    </div> <!-- end entry__content -->
-                    
-                </div> <!-- end entry -->
-
-                <div class="entry" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/thumbs/featured/featured-beetle.jpg');">
-
-                    <div class="entry__content">
-                        <span class="entry__category"><a href="#0">LifeStyle</a></span>
-
-                        <h1><a href="#0" title="">Throwback To The Good Old Days.</a></h1>
-
-                        <div class="entry__info">
-                            <a href="#0" class="entry__profile-pic">
-                                <img class="avatar" src="<?php echo get_template_directory_uri(); ?>/assets/images/avatars/user-03.jpg" alt="">
-                            </a>
-
-                            <ul class="entry__meta">
-                                <li><a href="#0">John Doe</a></li>
-                                <li>December 21, 2017</li>
+                                <li>
+                                    <a href="#0">
+                                        <?php echo esc_html($featured_posts[$i]['author'], 'wikisoft'); ?>  
+                                    </a>
+                                </li>
+                                <li>
+                                    <?php echo esc_html($featured_posts[$i]['date'], 'wikisoft'); ?>
+                                </li>
                             </ul>
                         </div>
                     </div> 
                 </div> 
+                <?php endfor; ?>
             </div>
         </div>
     </div>
 </div> 
+<?php endif; ?>

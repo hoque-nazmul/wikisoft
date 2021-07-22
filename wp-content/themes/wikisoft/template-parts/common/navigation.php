@@ -9,11 +9,14 @@
     </h2>
 
     <?php 
-        wp_nav_menu([
+        $menu_items = wp_nav_menu([
             'theme_location' => __('topmenu', 'wikisoft'),
             'menu_id' => __('topmenu', 'wikisoft'),
-            'menu_class' => __('header__nav', 'header__nav')
-        ])
+            'menu_class' => __('header__nav', 'header__nav'),
+            'echo' => false
+        ]);
+        $menu_items = str_replace('menu-item-has-children', 'menu-item-has-children has-children', $menu_items);
+        echo $menu_items;
     ?>
 
     <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">

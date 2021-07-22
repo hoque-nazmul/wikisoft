@@ -20,40 +20,40 @@
             'category' => $categories[mt_rand(0, count($categories)-1)]->name
         ];
     }
-    
+    wp_reset_query();
 ?>
 <div class="pageheader-content row">
     <div class="col-full">
         <div class="featured">
             <div class="featured__column featured__column--big">
-                <div class="entry" style="background-image:url('<?php echo esc_url($featured_posts[0]['post_thumbnails'], 'wikisoft'); ?>');">
+                <div class="entry" style="background-image:url('<?php echo esc_url($featured_posts[0]['post_thumbnails']); ?>');">
                     
                     <div class="entry__content">
                         <span class="entry__category">
                             <a href="#0">
-                                <?php echo esc_html($featured_posts[0]['category'], 'wikisoft'); ?>
+                                <?php echo esc_html($featured_posts[0]['category']); ?>
                             </a>
                         </span>
 
                         <h1>
                             <a href="#0" title="">
-                                <?php echo esc_html($featured_posts[0]['title'], 'wikisoft'); ?>
+                                <?php echo esc_html($featured_posts[0]['title']); ?>
                             </a>
                         </h1>
 
                         <div class="entry__info">
                             <a href="#0" class="entry__profile-pic">
-                                <img class="avatar" src="<?php echo esc_url($featured_posts[0]['avater'], 'wikisoft'); ?>" alt="">
+                                <img class="avatar" src="<?php echo esc_url($featured_posts[0]['avater']); ?>" alt="">
                             </a>
 
                             <ul class="entry__meta">
                                 <li>
                                     <a href="#0">
-                                        <?php echo esc_html($featured_posts[0]['author'], 'wikisoft'); ?>
+                                        <?php echo esc_html($featured_posts[0]['author']); ?>
                                     </a>
                                 </li>
                                 <li>
-                                    <?php echo esc_html($featured_posts[0]['date'], 'wikisoft'); ?>
+                                    <?php echo esc_html($featured_posts[0]['date']); ?>
                                 </li>
                             </ul>
                         </div>
@@ -66,34 +66,34 @@
                 <?php 
                     for($i = 1; $i < 3; $i++) : 
                 ?>
-                <div class="entry" style="background-image:url('<?php echo esc_url($featured_posts[$i]['post_thumbnails'], 'wikisoft'); ?>');">
+                <div class="entry" style="background-image:url('<?php echo esc_url($featured_posts[$i]['post_thumbnails']); ?>');">
                     
                     <div class="entry__content">
                         <span class="entry__category">
                             <a href="#0">
-                                <?php echo esc_html($featured_posts[$i]['category'], 'wikisoft'); ?>
+                                <?php echo esc_html($featured_posts[$i]['category']); ?>
                             </a>
                         </span>
 
                         <h1>
                             <a href="#0" title="">
-                                <?php echo esc_html($featured_posts[$i]['title'], 'wikisoft'); ?>
+                                <?php echo esc_html($featured_posts[$i]['title']); ?>
                             </a>
                         </h1>
 
                         <div class="entry__info">
                             <a href="#0" class="entry__profile-pic">
-                                <img class="avatar" src="<?php echo esc_url($featured_posts[$i]['avater'], 'wikisoft'); ?>" alt="">
+                                <img class="avatar" src="<?php echo esc_url($featured_posts[$i]['avater']); ?>" alt="">
                             </a>
 
                             <ul class="entry__meta">
                                 <li>
                                     <a href="#0">
-                                        <?php echo esc_html($featured_posts[$i]['author'], 'wikisoft'); ?>  
+                                        <?php echo esc_html($featured_posts[$i]['author']); ?>  
                                     </a>
                                 </li>
                                 <li>
-                                    <?php echo esc_html($featured_posts[$i]['date'], 'wikisoft'); ?>
+                                    <?php echo esc_html($featured_posts[$i]['date']); ?>
                                 </li>
                             </ul>
                         </div>

@@ -115,3 +115,7 @@ Tags: blog, education, news, grid-layout, featured-images, editor-style, feature
 .comment-form-cookies-consent > label {
     margin-left: 10px;
 }
+
+.entry__excerpt p {
+    color: #656565;
+}

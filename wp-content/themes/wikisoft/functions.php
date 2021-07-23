@@ -70,15 +70,6 @@ function wikisoft_widgets() {
         'after_title'   => '</h3>',
     ) );
     register_sidebar( array(
-        'name'          => __( 'Google Map Section', 'wikisoft' ),
-        'id'            => 'google-map',
-        'description'   => __( 'Google Map Section for Contact Page', 'wikisoft' ),
-        'before_widget' => '<div id="%1$s" class="%2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '',
-        'after_title'   => '',
-    ) );
-    register_sidebar( array(
         'name'          => __( 'Contact Information Section', 'wikisoft' ),
         'id'            => 'contact-info',
         'description'   => __( 'Contact Information Section for Contact Page', 'wikisoft' ),

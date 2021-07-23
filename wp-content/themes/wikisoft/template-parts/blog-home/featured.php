@@ -11,13 +11,16 @@
     while($wikisoft_fp->have_posts()) {
         $wikisoft_fp->the_post();
         $categories = get_the_category();
+        $random_cat = $categories[mt_rand(0, count($categories)-1)];
         $featured_posts[] = [
+            'id' => get_the_ID(),
             'post_thumbnails' => get_the_post_thumbnail_url(get_the_ID(), 'large'),
             'title' => get_the_title(),
             'author' => get_the_author_meta('display_name'),
             'avater' => get_avatar_url(get_the_author_meta('ID')),
             'date' => get_the_date(),
-            'category' => $categories[mt_rand(0, count($categories)-1)]->name
+            'category_name' => $random_cat->name,
+            'category_ID' => $random_cat->cat_ID
         ];
     }
     wp_reset_query();
@@ -30,13 +33,13 @@
                     
                     <div class="entry__content">
                         <span class="entry__category">
-                            <a href="#0">
-                                <?php echo esc_html($featured_posts[0]['category']); ?>
+                            <a href="<?php echo esc_url(get_category_link($featured_posts[0]['category_ID'])); ?>">
+                                <?php echo esc_html($featured_posts[0]['category_name']); ?>
                             </a>
                         </span>
 
                         <h1>
-                            <a href="#0" title="">
+                            <a href="<?php esc_url(the_permalink($featured_posts[0]['id'])); ?>" title="<?php echo esc_attr($featured_posts[0]['title']); ?>">
                                 <?php echo esc_html($featured_posts[0]['title']); ?>
                             </a>
                         </h1>
@@ -70,8 +73,8 @@
                     
                     <div class="entry__content">
                         <span class="entry__category">
-                            <a href="#0">
-                                <?php echo esc_html($featured_posts[$i]['category']); ?>
+                            <a href="<?php echo esc_url(get_category_link($featured_posts[$i]['category_ID'])); ?>">
+                                <?php echo esc_html($featured_posts[$i]['category_name']); ?>
                             </a>
                         </span>
 

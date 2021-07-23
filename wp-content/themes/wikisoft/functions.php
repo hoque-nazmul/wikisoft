@@ -54,3 +54,6 @@ function wikisoft_pagination () {
     $links = str_replace("next pgn__num", "pgn__next", $links);
     return $links;
 }
+
+// Remove Extra <p> in Category Description
+remove_filter('term_description','wpautop');

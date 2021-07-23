@@ -57,3 +57,17 @@ function wikisoft_pagination () {
 
 // Remove Extra <p> in Category Description
 remove_filter('term_description','wpautop');
+
+// Initialized: All Widgets
+function wikisoft_widgets() {
+    register_sidebar( array(
+        'name'          => __( 'About Us', 'wikisoft' ),
+        'id'            => 'about',
+        'description'   => __( 'Widget for About Page', 'wikisoft' ),
+        'before_widget' => '<div id="%1$s" class="col-block %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="quarter-top-margin">',
+        'after_title'   => '</h3>',
+    ) );
+}
+add_action( 'widgets_init', 'wikisoft_widgets' );

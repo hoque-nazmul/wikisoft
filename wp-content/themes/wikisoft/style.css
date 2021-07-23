@@ -12,3 +12,106 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: wikisoft
 Tags: blog, education, news, grid-layout, featured-images, editor-style, featured-image-header, footer-widgets, post-formats
 */
+
+
+/* Comment Form */
+
+.commentlist > .comment {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 0%;
+    margin-bottom: 20px;
+}
+
+.commentlist > .comment footer {
+    padding-top: 0rem;
+    padding-bottom: 2rem;
+}
+
+.comment-meta .comment-author {
+    display: flex;
+    align-items: center;
+}
+
+.comment-meta .comment-author img {
+    margin-top: 0.6rem;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 100%;
+    margin-right: 2rem;
+}
+
+.comment-meta b {
+    margin-top: -20px;
+}
+
+.comment-meta b.fn > a {
+    font-family: "metropolis-bold", sans-serif;
+    font-size: 1.9rem;
+    line-height: 1.263;
+    font-style: normal;
+    color: #151515;
+}
+
+.says, .edit-link {
+    display: none;
+}
+
+.comment-metadata {
+    font-family: "metropolis-regular", sans-serif;
+    font-size: 1.45rem;
+    line-height: 3rem;
+    font-style: normal;
+    display: block;
+    color: rgba(0, 0, 0, 0.7);
+    margin-left: 78px;
+    margin-top: -35px;
+}
+
+.comment-metadata a {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.comment-content, .reply {
+    margin-left: 78px;
+}
+
+.comment-content p {
+    margin-bottom: 0px;
+}
+
+#commentform > input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea {
+    width: 100%;
+}
+
+.form-submit > input[type="submit"] {
+    width: 100%;
+    background: #000000;
+    border-color: #000000;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+.form-submit > input[type="submit"]:hover {
+    background: #0054a5;
+    border-color: #0054a5;
+    color: #FFFFFF;
+}
+
+.comment-awaiting-moderation {
+    margin-left: 78px;
+    color: #f54848;
+}
+
+.comment-form-cookies-consent {
+    display: flex;
+}
+.comment-form-cookies-consent > input[type="checkbox"] {
+    margin-top: 5px;
+}
+
+.comment-form-cookies-consent > label {
+    margin-left: 10px;
+}

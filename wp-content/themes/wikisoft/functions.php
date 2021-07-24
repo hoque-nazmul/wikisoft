@@ -3,7 +3,7 @@ require_once get_theme_file_path('/inc/tgm.php');
 require_once get_theme_file_path('/inc/attachments.php');
 
 function wikisoft_theme_setup () {
-    load_theme_textdomain( 'wikisoft' );
+    load_theme_textdomain( 'wikisoft', get_theme_file_path('/languages') );
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'post-formats', ['audio', 'video', 'image', 'gallery', 'quote', 'link'] );

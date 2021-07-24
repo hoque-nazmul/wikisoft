@@ -20,7 +20,7 @@
             <div class="comment-pagination">
                 <?php 
                     get_the_comments_pagination([
-                        'screen_reader_text' => __(' ', 'wikisoft'),
+                        'screen_reader_text' => ' ',
                         'prev_text' => __('Prev Comments', 'wikisoft'),
                         'next_text' => __('Next Comments', 'wikisoft')
                     ])

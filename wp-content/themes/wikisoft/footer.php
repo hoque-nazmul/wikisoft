@@ -80,7 +80,6 @@
                         dynamic_sidebar('newsletter');
                     } 
                 ?>
-
                 <div class="subscribe-form">
                     <form id="mc-form" class="group" novalidate="true">
                         <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
@@ -102,16 +101,13 @@
                         dynamic_sidebar('copyright');
                     } 
                 ?>
-
                 <div class="go-top">
                     <a class="smoothscroll" title="Back to Top" href="#top"></a>
                 </div>
             </div>
         </div>
     </div>
-
 </footer>
-
 
 <!-- preloader
 ================================================== -->
@@ -127,9 +123,7 @@
     </div>
 </div>
 
-
 <?php wp_footer(); ?>
 
 </body>
-
 </html>

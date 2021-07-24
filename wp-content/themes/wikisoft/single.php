@@ -54,9 +54,7 @@
             comments_template();
         } 
     ?>
-
-</section> <!-- s-content -->
-
+</section>
 
 <?php 
     get_footer();

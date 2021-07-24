@@ -13,7 +13,7 @@
     <header class="header">
         <div class="header__content row">
             <div class="header__logo">
-                <a class="logo" href="index.html">
+                <a class="logo" href="<?php echo site_url(); ?>">
                     <h2 style="color: #fff; margin-top: 0px;"><?php bloginfo('name'); ?></h2>
                 </a>
             </div> 

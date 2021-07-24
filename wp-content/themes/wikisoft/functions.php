@@ -78,5 +78,14 @@ function wikisoft_widgets() {
         'before_title'  => '<h3 class="quarter-top-margin">',
         'after_title'   => '</h3>',
     ) );
+    register_sidebar( array(
+        'name'          => __( 'Social Share Widget', 'wikisoft' ),
+        'id'            => 'social-share',
+        'description'   => __( 'Social Share Widget for Header & Footer', 'wikisoft' ),
+        'before_widget' => '<ul id="%1$s" class="header__social %2$s">',
+        'after_widget'  => '</ul>',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
 }
 add_action( 'widgets_init', 'wikisoft_widgets' );

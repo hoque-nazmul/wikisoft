@@ -1,76 +1,14 @@
-<!-- s-extra
-================================================== -->
-
+<?php 
+    $popular_posts = new WP_Query([
+        'posts_per_page' => 6,
+        'ignore_sticky_posts' => 1,
+        'orderby' => 'comment_count'
+    ]);
+?>
 <section class="s-extra">
-
     <div class="row top">
-
-        <div class="col-eight md-six tab-full popular">
-            <h3>Popular Posts</h3>
-
-            <div class="block-1-2 block-m-full popular__posts">
-                <article class="col-block popular__post">
-                    <a href="#0" class="popular__thumb">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbs/small/wheel-150.jpg" alt="">
-                    </a>
-                    <h5><a href="#0">Visiting Theme Parks Improves Your Health.</a></h5>
-                    <section class="popular__meta">
-                            <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                        <span class="popular__date"><span>on</span> <time datetime="2017-12-19">Dec 19, 2017</time></span>
-                    </section>
-                </article>
-                <article class="col-block popular__post">
-                    <a href="#0" class="popular__thumb">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbs/small/shutterbug-150.jpg" alt="">
-                    </a>
-                    <h5><a href="#0">Key Benefits Of Family Photography.</a></h5>
-                    <section class="popular__meta">
-                        <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                        <span class="popular__date"><span>on</span> <time datetime="2017-12-18">Dec 18, 2017</time></span>
-                    </section>
-                </article>
-                <article class="col-block popular__post">
-                    <a href="#0" class="popular__thumb">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbs/small/cookies-150.jpg" alt="">
-                    </a>
-                    <h5><a href="#0">Absolutely No Sugar Oatmeal Cookies.</a></h5>
-                    <section class="popular__meta">
-                            <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                        <span class="popular__date"><span>on</span> <time datetime="2017-12-16">Dec 16, 2017</time></span>
-                    </section>
-                </article>
-                <article class="col-block popular__post">
-                    <a href="#0" class="popular__thumb">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbs/small/beetle-150.jpg" alt="">
-                    </a>
-                    <h5><a href="#0">Throwback To The Good Old Days.</a></h5>
-                    <section class="popular__meta">
-                        <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                        <span class="popular__date"><span>on</span> <time datetime="2017-12-16">Dec 16, 2017</time></span>
-                    </section>
-                </article>
-                <article class="col-block popular__post">
-                    <a href="#0" class="popular__thumb">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbs/small/tulips-150.jpg" alt="">
-                    </a>
-                    <h5><a href="#0">10 Interesting Facts About Caffeine.</a></h5>
-                    <section class="popular__meta">
-                        <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                        <span class="popular__date"><span>on</span> <time datetime="2017-12-14">Dec 14, 2017</time></span>
-                    </section>
-                </article>
-                <article class="col-block popular__post">
-                    <a href="#0" class="popular__thumb">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbs/small/salad-150.jpg" alt="">
-                    </a>
-                    <h5><a href="#0">Healthy Mediterranean Salad Recipes</a></h5>
-                    <section class="popular__meta">
-                        <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                        <span class="popular__date"><span>on</span> <time datetime="2017-12-12">Dec 12, 2017</time></span>
-                    </section>
-                </article>
-            </div> <!-- end popular_posts -->
-        </div> <!-- end popular -->
+        <!-- Popular Post -->
+        <?php get_template_part('template-parts/common/post/popular'); ?>
         
         <div class="col-four md-six tab-full about">
             <h3>About Philosophy</h3>

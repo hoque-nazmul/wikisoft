@@ -107,3 +107,4 @@ function wikisoft_widgets() {
     ) );
 }
 add_action( 'widgets_init', 'wikisoft_widgets' );
+

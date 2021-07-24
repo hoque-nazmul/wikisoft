@@ -110,6 +110,24 @@ function wikisoft_widgets() {
         'before_title'  => '',
         'after_title'   => '',
     ) );
+    register_sidebar( array(
+        'name'          => __( 'Footer Newsletter', 'wikisoft' ),
+        'id'            => 'newsletter',
+        'description'   => __( 'Footer Newsletter Section', 'wikisoft' ),
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4>',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'CopyRight Footer', 'wikisoft' ),
+        'id'            => 'copyright',
+        'description'   => __( 'CopyRight Footer Content', 'wikisoft' ),
+        'before_widget' => '<div id="%1$s" class="s-footer__copyright %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
 }
 add_action( 'widgets_init', 'wikisoft_widgets' );
 

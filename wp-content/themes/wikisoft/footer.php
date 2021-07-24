@@ -75,8 +75,11 @@
             </div> 
 
             <div class="col-five md-full end s-footer__subscribe">
-                <h4>Our Newsletter</h4>
-                <p>Sit vel delectus amet officiis repudiandae est voluptatem. Tempora maxime provident nisi et fuga et enim exercitationem ipsam. Culpa consequatur occaecati.</p>
+                <?php 
+                    if (is_active_sidebar('newsletter')) {
+                        dynamic_sidebar('newsletter');
+                    } 
+                ?>
 
                 <div class="subscribe-form">
                     <form id="mc-form" class="group" novalidate="true">
@@ -94,10 +97,11 @@
     <div class="s-footer__bottom">
         <div class="row">
             <div class="col-full">
-                <div class="s-footer__copyright">
-                    <span>© Copyright WikiSoft 2021</span> 
-                    <span>Developed by <a target="_blank" href="//softcope.com">SoftCope</a></span>
-                </div>
+                <?php 
+                    if (is_active_sidebar('copyright')) {
+                        dynamic_sidebar('copyright');
+                    } 
+                ?>
 
                 <div class="go-top">
                     <a class="smoothscroll" title="Back to Top" href="#top"></a>

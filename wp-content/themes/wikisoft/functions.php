@@ -10,6 +10,11 @@ function wikisoft_theme_setup () {
     add_theme_support( 'html5', ['search-form', 'comment-list'] );
     add_editor_style( '/assets/css/editor-style.css' );
     register_nav_menu( 'topmenu', __( 'Top Menu', 'wikisoft' ) );
+    register_nav_menus([
+        'footerleft' => __('Footer Left', 'wikisoft'),
+        'footermiddle' => __('Footer Middle', 'wikisoft'),
+        'footerright' => __('Footer Right', 'wikisoft'),
+    ]);
     add_image_size('wikisoft-square', 400, 400, true);
 }
 add_action('after_setup_theme', 'wikisoft_theme_setup');

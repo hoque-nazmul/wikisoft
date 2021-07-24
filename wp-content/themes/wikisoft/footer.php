@@ -9,53 +9,29 @@
     <div class="row top">
         <!-- Popular Post -->
         <?php get_template_part('template-parts/common/post/popular'); ?>
-        
+
         <div class="col-four md-six tab-full about">
-            <h3>About Philosophy</h3>
-
-            <p>
-            Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada.
-            </p>
-
-            <ul class="about__social">
-                <li>
-                    <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                    <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                    <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                    <a href="#0"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                </li>
-            </ul> <!-- end header__social -->
-        </div> <!-- end about -->
-
-    </div> <!-- end row -->
-
+            <?php 
+                if (is_active_sidebar('about-summary')) {
+                    dynamic_sidebar('about-summary');
+                }
+                if (is_active_sidebar('footer-social')) {
+                    dynamic_sidebar('footer-social');
+                }
+            ?>
+        </div> 
+    </div> 
     <div class="row bottom tags-wrap">
         <div class="col-full tags">
-            <h3>Tags</h3>
-
+            <h3>
+                <?php _e('Tags', 'wikisoft'); ?>
+            </h3>
             <div class="tagcloud">
-                <a href="#0">Salad</a>
-                <a href="#0">Recipe</a>
-                <a href="#0">Places</a>
-                <a href="#0">Tips</a>
-                <a href="#0">Friends</a>
-                <a href="#0">Travel</a>
-                <a href="#0">Exercise</a>
-                <a href="#0">Reading</a>
-                <a href="#0">Running</a>
-                <a href="#0">Self-Help</a>
-                <a href="#0">Vacation</a>
-            </div> <!-- end tagcloud -->
-        </div> <!-- end tags -->
-    </div> <!-- end tags-wrap -->
-
-</section> <!-- end s-extra -->
+                <?php echo get_the_tag_list(); ?>
+            </div> 
+        </div> 
+    </div> 
+</section> 
 
 
 <!-- s-footer

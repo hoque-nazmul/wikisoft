@@ -81,8 +81,26 @@ function wikisoft_widgets() {
     register_sidebar( array(
         'name'          => __( 'Social Share Widget', 'wikisoft' ),
         'id'            => 'social-share',
-        'description'   => __( 'Social Share Widget for Header & Footer', 'wikisoft' ),
+        'description'   => __( 'Social Share Widget for Header', 'wikisoft' ),
         'before_widget' => '<ul id="%1$s" class="header__social %2$s">',
+        'after_widget'  => '</ul>',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'Wikisoft About Summary', 'wikisoft' ),
+        'id'            => 'about-summary',
+        'description'   => __( 'Wikisoft About Summary in Footer Section', 'wikisoft' ),
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => "<h3 style='margin-bottom: 2.4rem'>",
+        'after_title'   => '</h3>',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'About us Social Share', 'wikisoft' ),
+        'id'            => 'footer-social',
+        'description'   => __( 'About us Social Share for Footer', 'wikisoft' ),
+        'before_widget' => '<ul id="%1$s" class="about__social %2$s">',
         'after_widget'  => '</ul>',
         'before_title'  => '',
         'after_title'   => '',

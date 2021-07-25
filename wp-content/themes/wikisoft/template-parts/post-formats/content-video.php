@@ -4,10 +4,10 @@
         $video_url = get_field('file_source');
     }
 ?>
-<article class="masonry__brick entry format-video" data-aos="fade-up">
+<article <?php post_class(["masonry__brick", "entry", "format-video"]); ?> data-aos="fade-up">
                         
     <div class="entry__thumb video-image">
-        <a href="<?php echo $video_url; ?>" data-lity>
+        <a href="<?php echo esc_url($video_url); ?>" data-lity>
             <img src="<?php the_post_thumbnail_url('wikisoft-square'); ?>" alt="">
         </a>
     </div>

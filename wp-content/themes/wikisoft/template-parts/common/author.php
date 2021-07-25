@@ -21,7 +21,7 @@
             ?>
             <?php if ($website): ?>
                 <li>
-                    <a href="<?php echo $website; ?>">
+                    <a href="<?php echo esc_url($website); ?>">
                         <?php _e('Website', 'wikisoft') ?>
                     </a>
                 </li>
@@ -29,7 +29,7 @@
             
             <?php if ($facebook): ?>
                 <li>
-                    <a href="<?php echo $facebook; ?>">
+                    <a href="<?php echo esc_url($facebook); ?>">
                         <?php _e('Facebook', 'wikisoft') ?>
                     </a>
                 </li>

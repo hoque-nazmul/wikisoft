@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" <?php language_attributes(); ?>>
 <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -9,6 +9,7 @@
 </head>
 
 <body id="top" <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <section class="s-pageheader <?php if (is_home()) { echo 's-pageheader--home'; } ?>">
     <header class="header">
         <div class="header__content row">

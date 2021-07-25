@@ -31,6 +31,7 @@
         <div class="col-full s-content__main">
             <?php 
                 the_content();
+                wp_link_pages();
             ?>
             <p class="s-content__tags">
                 <span>

@@ -79,7 +79,7 @@
                         </span>
 
                         <h1>
-                            <a href="#0" title="">
+                            <a href="<?php esc_url(the_permalink($featured_posts[$i]['id'])); ?>" title="<?php echo esc_attr($featured_posts[$i]['title']); ?>">
                                 <?php echo esc_html($featured_posts[$i]['title']); ?>
                             </a>
                         </h1>
